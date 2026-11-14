@@ -408,12 +408,15 @@ def run_server(port=None):
     os.chdir(os.path.dirname(os.path.abspath(__file__)))
     socketserver.TCPServer.allow_reuse_address = True
 
-    ports_to_try = [port] if port else [DEFAULT_PORT, 8082, 8000, 3000, 8083]
+    # Render.com injects PORT env variable -- always honour it
+    render_port = int(os.environ.get("PORT", 0)) or None
+    resolved = port or render_port
+    ports_to_try = [resolved] if resolved else [DEFAULT_PORT, 8082, 8000, 3000, 8083]
     for p in ports_to_try:
         if not p: continue
         try:
             httpd = socketserver.TCPServer(("", p), SkilloraHandler)
-            print(f"Skillora AI server running at http://localhost:{p}")
+            print(f"Skillora AI server running at http://0.0.0.0:{p}")
             try:
                 httpd.serve_forever()
             except KeyboardInterrupt:

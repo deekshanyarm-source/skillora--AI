@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: skillora-ai
+    runtime: python
+    buildCommand: python3 database.py
+    startCommand: python3 server.py
+    envVars:
+      - key: PORT
+        generateValue: false
+    plan: free
