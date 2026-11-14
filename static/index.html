@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skillora AI – Discover Your Potential. Design Your Future.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Hidden SVG Gradient Definitions for Circular Rings & Badges -->
+  <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" aria-hidden="true">
+    <defs>
+      <linearGradient id="statRingGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#c084fc" />
+        <stop offset="50%" stop-color="#8b5cf6" />
+        <stop offset="100%" stop-color="#38bdf8" />
+      </linearGradient>
+    </defs>
+  </svg>
+
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="appSidebar">
+      <div class="brand">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-name">Skillora AI</div>
+          <div class="brand-tagline">Design Your Future</div>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <a class="nav-item active" data-view="dashboard">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          </span>
+          <span>Home Dashboard</span>
+        </a>
+
+        <a class="nav-item" data-view="dna">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 15c6.667-6 13.333 0 20-6"></path><path d="M9 22c1.798-1.998 2.518-3.995 2.807-5.993"></path><path d="M15 2c-1.798 1.998-2.518 3.995-2.807 5.993"></path><path d="M17 17a5 5 0 0 0-5-5"></path><path d="M7 7a5 5 0 0 0 5 5"></path></svg>
+          </span>
+          <span>Career DNA</span>
+        </a>
+
+        <a class="nav-item" data-view="universe">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><circle cx="19" cy="5" r="2"></circle><circle cx="5" cy="19" r="2"></circle><path d="m10.4 10.4-3.8 7.2"></path><path d="m13.6 13.6 3.8-7.2"></path></svg>
+          </span>
+          <span>My Skill Universe</span>
+        </a>
+
+        <a class="nav-item" data-view="explorer">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+          </span>
+          <span>Career Explorer</span>
+        </a>
+
+        <a class="nav-item" data-view="journey">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"></path><circle cx="18" cy="5" r="3"></circle></svg>
+          </span>
+          <span>Learning Journey</span>
+        </a>
+
+        <a class="nav-item" data-view="mentor">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          </span>
+          <span>AI Mentor</span>
+        </a>
+
+        <a class="nav-item" data-view="projects">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          </span>
+          <span>My Projects</span>
+        </a>
+
+        <a class="nav-item" data-view="futureme">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </span>
+          <span>Future Me</span>
+        </a>
+
+        <a class="nav-item" data-view="progress">
+          <span class="nav-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+          </span>
+          <span>Achievements</span>
+        </a>
+      </nav>
+
+      <!-- Sidebar 5-Agent Mini Status -->
+      <div class="sidebar-agents-preview">
+        <div class="agents-header">
+          <span>AI Mesh Synchronized</span>
+          <div style="display: flex; align-items: center; gap: 6px; color: var(--accent-emerald); font-size: 0.72rem; font-weight: 700;">
+            <span class="pulse-dot"></span> 5 Active
+          </div>
+        </div>
+        <div class="agent-mini-row"><span class="agent-mini-dot"></span> Skill Analyzer Agent</div>
+        <div class="agent-mini-row"><span class="agent-mini-dot"></span> Career Guide Agent</div>
+        <div class="agent-mini-row"><span class="agent-mini-dot"></span> Learning Planner Agent</div>
+        <div class="agent-mini-row"><span class="agent-mini-dot"></span> Progress Evaluator Agent</div>
+        <div class="agent-mini-row"><span class="agent-mini-dot"></span> AI Mentor Agent</div>
+      </div>
+    </aside>
+
+    <!-- Main Content Wrapper -->
+    <div class="main-wrapper">
+      <!-- Top Sticky Header -->
+      <header class="top-header">
+        <div style="display: flex; align-items: center; gap: 14px;">
+          <h1 class="page-title" id="pageTitleHeading">Home Dashboard</h1>
+        </div>
+        <div class="header-right">
+          <button class="btn-collaborate" id="btnSyncAgents">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21.5 2v6h-6M2.5 22v-6h6M2 11.5a10 10 0 0 1 18.8-4.3M22 12.5a10 10 0 0 1-18.8 4.2"/></svg>
+            <span>5-Agent Sync Huddle</span>
+          </button>
+          <div class="user-pill">
+            <div class="user-avatar" id="userAvatarLetter">D</div>
+            <div>
+              <span class="user-name" id="userDisplayName">Deeksha</span>
+              <span class="user-role-badge" id="userRoleBadge">Full Stack Developer Aspirant</span>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Views Container -->
+      <main class="views-container">
+
+        <!-- 1. HOME DASHBOARD VIEW -->
+        <section id="view-dashboard" class="view-section active">
+          <!-- Hero Banner -->
+          <div class="dashboard-hero-banner">
+            <div class="banner-glow-orb"></div>
+            <h2 class="hero-greeting">Welcome back, <span id="welcomeLearnerName">Deeksha</span>! ✨</h2>
+            <p class="hero-subtext" id="heroSummaryText">
+              Skillora AI studies your unique potential, discovers hidden skill gaps, and continuously personalizes your journey toward becoming a certified <strong>Full Stack Developer</strong>. Every skill has a purpose. Every learner has a future.
+            </p>
+            <div class="hero-meta-row">
+              <div class="meta-pill">
+                🎯 Dream Career: <strong id="heroCareerGoal" style="color: #fff;">Full Stack Developer</strong>
+                <button class="btn-switch-goal" id="btnHeroSwitchCareer">Explore Careers</button>
+              </div>
+              <div class="meta-pill">
+                🧠 Smart Adapt AI: <strong id="heroAdaptStatus" style="color: var(--accent-emerald);">Continuously Evolving</strong>
+              </div>
+              <div class="meta-pill">
+                🔥 Momentum: <strong id="heroStreakStatus" style="color: var(--accent-amber);">6-Day Learning Streak</strong>
+              </div>
+            </div>
+
+            <!-- Quick Interactive Demo Control Bar -->
+            <div class="demo-scenarios-bar">
+              <span class="demo-scenarios-label">⚡ Live AI Test Scenarios:</span>
+              <button class="demo-chip-btn" id="btnDemoLowScore">🧠 Test &lt;50% Assessment (Smart Adapt Remedial)</button>
+              <button class="demo-chip-btn" id="btnDemoHighScore">⚡ Test &gt;85% Assessment (Fast-Track Unlock)</button>
+              <button class="demo-chip-btn" id="btnDemoRunProject">🛠️ Run Project Bridge (Calculator Code Sandbox)</button>
+              <button class="demo-chip-btn" id="btnDemoSwitchGoal">🎯 Switch to Data Scientist (5 Agents Recalibrate)</button>
+            </div>
+          </div>
+
+          <!-- Stats Grid -->
+          <div class="stats-grid">
+            <!-- 1. Career Readiness Score -->
+            <div class="stat-card">
+              <div class="stat-ring-container">
+                <svg class="stat-ring-svg" viewBox="0 0 64 64">
+                  <circle class="stat-ring-bg" cx="32" cy="32" r="26"></circle>
+                  <circle class="stat-ring-fill" id="readinessRingCircle" cx="32" cy="32" r="26"></circle>
+                </svg>
+                <span class="stat-ring-value" id="readinessPercentText">42%</span>
+              </div>
+              <div class="stat-content">
+                <span class="stat-label">Career Readiness</span>
+                <span class="stat-number" id="readinessScoreBig">42%</span>
+                <span class="stat-footnote">Benchmarked by Career Guide</span>
+              </div>
+            </div>
+
+            <!-- 2. Overall Skill Strength -->
+            <div class="stat-card">
+              <div class="stat-icon-box purple">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10M12 20V4M6 20v-6"></path></svg>
+              </div>
+              <div class="stat-content">
+                <span class="stat-label">Skill Strength</span>
+                <span class="stat-number" id="skillStrengthPercent">45%</span>
+                <span class="stat-footnote">Audited by Skill Analyzer</span>
+              </div>
+            </div>
+
+            <!-- 3. Skills Mastered vs Pending -->
+            <div class="stat-card">
+              <div class="stat-icon-box green">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <div class="stat-content">
+                <span class="stat-label">Mastered / Missing</span>
+                <span class="stat-number"><span id="skillsMasteredCount" style="color: var(--accent-emerald);">2</span> / <span id="skillsMissingCount" style="color: var(--accent-rose);">5</span></span>
+                <span class="stat-footnote">Python & SQL confirmed</span>
+              </div>
+            </div>
+
+            <!-- 4. Active Streak -->
+            <div class="stat-card">
+              <div class="stat-icon-box amber">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 3z"></path></svg>
+              </div>
+              <div class="stat-content">
+                <span class="stat-label">Learning Streak</span>
+                <span class="stat-number" id="streakDaysCount">6 Days 🔥</span>
+                <span class="stat-footnote">5.5 hrs invested this week</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2 Columns: Daily Mission & Agent Live Collaboration -->
+          <div class="dashboard-columns">
+            <div>
+              <!-- Daily Mission Card -->
+              <div class="daily-mission-card">
+                <span class="mission-tag">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  Today's Personalized Learning Mission
+                </span>
+                <div class="mission-text" id="dailyMissionText">
+                  Master CSS Flexbox layouts & ES6 JavaScript arrow functions
+                </div>
+                <div class="mission-action-row">
+                  <button class="btn-complete-mission" id="btnToggleMission">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    <span id="missionBtnLabel">Mark as Completed</span>
+                  </button>
+                  <span class="streak-pill">🔥 +120 XP toward Full Stack Emergence</span>
+                </div>
+              </div>
+
+              <!-- Multi-Agent Live Decision Stream -->
+              <div class="glass-card">
+                <div class="glass-card-header">
+                  <div class="card-title-group">
+                    <div class="card-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    </div>
+                    <div>
+                      <h3 class="card-title">Multi-Agent Intelligence Stream</h3>
+                      <p class="card-subtitle">Live exchange logs between all 5 specialized agents</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="agent-logs-list" id="dashboardAgentLogs">
+                  <!-- Injected dynamically -->
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <!-- Weekly Learning Pace -->
+              <div class="glass-card" style="margin-bottom: 24px;">
+                <div class="glass-card-header">
+                  <div class="card-title-group">
+                    <div class="card-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <div>
+                      <h3 class="card-title">Weekly Learning Pace</h3>
+                      <p class="card-subtitle">5.5 hrs completed (Target: 8 hrs / week)</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="weekly-bars">
+                  <div class="bar-col">
+                    <div class="bar-track"><div class="bar-fill" style="height: 50%;"></div></div>
+                    <span class="bar-label">Mon</span>
+                  </div>
+                  <div class="bar-col">
+                    <div class="bar-track"><div class="bar-fill" style="height: 65%;"></div></div>
+                    <span class="bar-label">Tue</span>
+                  </div>
+                  <div class="bar-col">
+                    <div class="bar-track"><div class="bar-fill" style="height: 80%;"></div></div>
+                    <span class="bar-label">Wed</span>
+                  </div>
+                  <div class="bar-col">
+                    <div class="bar-track"><div class="bar-fill today" style="height: 90%;"></div></div>
+                    <span class="bar-label">Thu (Today)</span>
+                  </div>
+                  <div class="bar-col">
+                    <div class="bar-track"><div class="bar-fill" style="height: 25%;"></div></div>
+                    <span class="bar-label">Fri</span>
+                  </div>
+                  <div class="bar-col">
+                    <div class="bar-track"><div class="bar-fill" style="height: 0%;"></div></div>
+                    <span class="bar-label">Sat</span>
+                  </div>
+                  <div class="bar-col">
+                    <div class="bar-track"><div class="bar-fill" style="height: 0%;"></div></div>
+                    <span class="bar-label">Sun</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- AI Personalized Career Insights -->
+              <div class="glass-card">
+                <div class="glass-card-header">
+                  <div class="card-title-group">
+                    <div class="card-icon">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <div>
+                      <h3 class="card-title">AI Career Strategy Insights</h3>
+                      <p class="card-subtitle">Synthesized by Career Guide & AI Mentor</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="suggestions-list">
+                  <div class="suggestion-card">
+                    <span class="suggestion-badge">Synergy Bridge</span>
+                    <div>
+                      <h4 class="suggestion-title">Channel Python Logic into Node.js Microservices</h4>
+                      <p class="suggestion-desc">With verified Python at 70%, you already master OOP patterns. Bridging into Node.js will take half the usual time by mapping Python dicts and REST routes directly to Express middleware.</p>
+                    </div>
+                  </div>
+                  <div class="suggestion-card">
+                    <span class="suggestion-badge" style="background: rgba(244, 63, 94, 0.15); color: var(--accent-rose);">Critical Gap</span>
+                    <div>
+                      <h4 class="suggestion-title">Unblock React by Conquering JavaScript ES6+</h4>
+                      <p class="suggestion-desc">Skill Analyzer flagged 10% verified JavaScript. Master arrow functions, closures, and async/await in Stage 1 so React hooks and props feel second nature in Stage 2.</p>
+                    </div>
+                  </div>
+                  <div class="suggestion-card">
+                    <span class="suggestion-badge" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald);">Project Bridge</span>
+                    <div>
+                      <h4 class="suggestion-title">Build the Interactive Calculator Project</h4>
+                      <p class="suggestion-desc">Take on the JavaScript Calculator in our Skill-to-Project Bridge to test your operand logic and immediately raise your Career Readiness by +8%.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. CAREER DNA VIEW -->
+        <section id="view-dna" class="view-section">
+          <div class="glass-card-header" style="margin-bottom: 24px;">
+            <div>
+              <h2 class="card-title" style="font-size: 1.4rem;">Career DNA – Understand Your Potential</h2>
+              <p class="card-subtitle">Holistic assessment of your natural cognitive strengths, engineering traits, and optimal career directions</p>
+            </div>
+            <div class="meta-pill">
+              Learner: <strong style="color: var(--lavender-soft);">Deeksha</strong>
+            </div>
+          </div>
+
+          <div class="dna-grid">
+            <!-- DNA Spider Competency Graph -->
+            <div class="glass-card">
+              <div class="glass-card-header">
+                <div class="card-title-group">
+                  <div class="card-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="m4.93 4.93 4.24 4.24"></path><path d="m14.83 9.17 4.24-4.24"></path><path d="m14.83 14.83 4.24 4.24"></path><path d="m9.17 14.83-4.24 4.24"></path></svg>
+                  </div>
+                  <div>
+                    <h3 class="card-title">Cognitive DNA Competency Map</h3>
+                    <p class="card-subtitle">6 core engineering dimensions calculated across submissions & diagnostics</p>
+                  </div>
+                </div>
+              </div>
+              <div class="dna-radar-canvas-container">
+                <canvas id="dnaRadarCanvas" width="400" height="340"></canvas>
+              </div>
+            </div>
+
+            <!-- Natural Strengths & Growth Edges -->
+            <div class="glass-card">
+              <div class="glass-card-header">
+                <div class="card-title-group">
+                  <div class="card-icon">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  </div>
+                  <div>
+                    <h3 class="card-title">Strengths & Growth Edges</h3>
+                    <p class="card-subtitle">Audited by Skill Analyzer Agent</p>
+                  </div>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 20px;">
+                <h4 style="font-size: 0.82rem; text-transform: uppercase; color: var(--accent-emerald); font-weight: 700; margin-bottom: 8px;">🌟 Confirmed Natural Strengths</h4>
+                <div class="dna-traits-list" id="dnaStrengthsList">
+                  <!-- Injected dynamically -->
+                </div>
+              </div>
+
+              <div>
+                <h4 style="font-size: 0.82rem; text-transform: uppercase; color: var(--lavender); font-weight: 700; margin-bottom: 8px;">🌱 Priority Growth Edges</h4>
+                <div class="dna-traits-list" id="dnaGrowthEdgesList">
+                  <!-- Injected dynamically -->
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Suitable Career Directions -->
+          <div class="glass-card">
+            <h3 class="card-title" style="margin-bottom: 16px;">Suitable Career Directions & Trajectory Alignment</h3>
+            <div id="dnaRecommendedPathsContainer">
+              <!-- Injected dynamically -->
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. MY SKILL UNIVERSE VIEW -->
+        <section id="view-universe" class="view-section">
+          <div class="glass-card-header" style="margin-bottom: 20px;">
+            <div>
+              <h2 class="card-title" style="font-size: 1.4rem;">My Skill Universe – Interactive Galaxy Map</h2>
+              <p class="card-subtitle">Explore skills as connected celestial nodes. Select any node to view importance, prerequisites, and curated resources.</p>
+            </div>
+            <button class="btn-collaborate" id="btnOpenAddSkillModal">+ Discover / Add Skill</button>
+          </div>
+
+          <!-- Interactive Universe Viewport Canvas -->
+          <div class="universe-viewport">
+            <canvas class="universe-canvas" id="universeCanvas" width="1000" height="480"></canvas>
+          </div>
+
+          <!-- Legend -->
+          <div class="universe-legend">
+            <div class="legend-item"><span class="legend-dot mastered"></span> Already Mastered (Python, SQL)</div>
+            <div class="legend-item"><span class="legend-dot learning"></span> Currently Learning (Basic HTML)</div>
+            <div class="legend-item"><span class="legend-dot missing"></span> Missing Gaps (CSS, JavaScript, React, Node.js, API Integration)</div>
+            <div class="legend-item"><span class="legend-dot recommended"></span> Recommended Next (Git, Web Security)</div>
+          </div>
+
+          <!-- Selected Skill Detail Drawer -->
+          <div class="skill-drawer" id="selectedSkillDrawer">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+              <div>
+                <span class="stage-badge active" id="drawerSkillStateBadge">Mastered</span>
+                <h3 class="card-title" style="font-size: 1.3rem; margin-top: 6px;" id="drawerSkillName">Python</h3>
+                <p class="card-subtitle" id="drawerSkillCategory">Category: Backend • Importance: High</p>
+              </div>
+              <div style="text-align: right;">
+                <span style="font-size: 0.76rem; color: var(--text-muted);">Proficiency</span>
+                <div style="font-size: 1.6rem; font-weight: 800; color: #fff;" id="drawerSkillProf">70%</div>
+              </div>
+            </div>
+
+            <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.5; margin-bottom: 16px;" id="drawerSkillNotes">
+              Strong foundational grasp of OOP, collections, list comprehensions, and clean scripting.
+            </p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+              <div>
+                <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">Prerequisites</h4>
+                <div id="drawerPrereqsList" style="display: flex; flex-wrap: wrap; gap: 6px;">
+                  <span class="prompt-pill">Basic Computer Science</span>
+                </div>
+              </div>
+              <div>
+                <h4 style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">Recommended Learning Resources</h4>
+                <div id="drawerResourcesList" style="display: flex; flex-direction: column; gap: 6px;">
+                  <!-- Injected resources -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. CAREER EXPLORER VIEW -->
+        <section id="view-explorer" class="view-section">
+          <div class="glass-card-header" style="margin-bottom: 24px;">
+            <div>
+              <h2 class="card-title" style="font-size: 1.4rem;">Intelligent Career Matching & Explorer</h2>
+              <p class="card-subtitle">Benchmark your existing skills against industry expectations with deep meaningful explanations</p>
+            </div>
+          </div>
+
+          <!-- Career Selector Cards -->
+          <div class="career-selector-cards" id="careerExplorerCards">
+            <!-- Injected dynamically -->
+          </div>
+
+          <!-- Matching vs Missing Benchmarking Table -->
+          <div class="glass-card">
+            <div class="glass-card-header">
+              <div>
+                <h3 class="card-title" id="explorerSelectedRoleTitle">Full Stack Developer Benchmark Analysis</h3>
+                <p class="card-subtitle" id="explorerSelectedRoleDesc">Evaluates client-side UI, server services, database models, and API integrations.</p>
+              </div>
+              <button class="btn-collaborate" id="btnSwitchToThisCareer" style="background: var(--primary); color: #fff;">Set As My Career Goal</button>
+            </div>
+
+            <div style="overflow-x: auto;">
+              <table class="gap-table">
+                <thead>
+                  <tr>
+                    <th>Core Competency</th>
+                    <th>Category</th>
+                    <th>Industry Target</th>
+                    <th>Your Level</th>
+                    <th>Priority</th>
+                    <th>Match State</th>
+                  </tr>
+                </thead>
+                <tbody id="careerGapTableBody">
+                  <!-- Injected dynamically -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. LEARNING JOURNEY VIEW -->
+        <section id="view-journey" class="view-section">
+          <div class="glass-card-header" style="margin-bottom: 24px;">
+            <div>
+              <h2 class="card-title" style="font-size: 1.4rem;">Personalized 4-Stage Learning Journey</h2>
+              <p class="card-subtitle">Synthesized by Learning Planner Agent: Discover ➔ Develop ➔ Create ➔ Achieve</p>
+            </div>
+            <div class="meta-pill">
+              ⚡ Status: <strong style="color: var(--accent-emerald);">Smart Adapt AI Active</strong>
+            </div>
+          </div>
+
+          <!-- Roadmap Timeline -->
+          <div class="roadmap-timeline" id="learningJourneyContainer">
+            <!-- Injected dynamically -->
+          </div>
+        </section>
+
+        <!-- 6. AI MENTOR VIEW -->
+        <section id="view-mentor" class="view-section">
+          <div class="glass-card-header" style="margin-bottom: 24px;">
+            <div>
+              <h2 class="card-title" style="font-size: 1.4rem;">AI Mentor – Your Personal Learning Companion</h2>
+              <p class="card-subtitle">Direct dialogue with your AI Mentor or consult any of the 5 specialized agents</p>
+            </div>
+          </div>
+
+          <div class="mentor-chat-layout">
+            <!-- Agent Selector Pane -->
+            <div class="mentor-agents-list">
+              <h4 style="font-size: 0.76rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;">Select Consultant</h4>
+
+              <div class="agent-selector-card active" data-agent="AI Mentor Agent">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="pulse-dot"></span>
+                  <strong style="font-size: 0.88rem; color: #fff;">AI Mentor Agent</strong>
+                </div>
+                <p style="font-size: 0.74rem; color: var(--text-muted); margin-top: 4px;">Personal coach, encouragement, and daily learning goals</p>
+              </div>
+
+              <div class="agent-selector-card" data-agent="Skill Analyzer Agent">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="agent-mini-dot"></span>
+                  <strong style="font-size: 0.88rem; color: #fff;">Skill Analyzer Agent</strong>
+                </div>
+                <p style="font-size: 0.74rem; color: var(--text-muted); margin-top: 4px;">Audits strengths, weaknesses, and skill prerequisites</p>
+              </div>
+
+              <div class="agent-selector-card" data-agent="Career Guide Agent">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="agent-mini-dot"></span>
+                  <strong style="font-size: 0.88rem; color: #fff;">Career Guide Agent</strong>
+                </div>
+                <p style="font-size: 0.74rem; color: var(--text-muted); margin-top: 4px;">Hiring benchmarks, gap matrix, and career readiness</p>
+              </div>
+
+              <div class="agent-selector-card" data-agent="Learning Planner Agent">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="agent-mini-dot"></span>
+                  <strong style="font-size: 0.88rem; color: #fff;">Learning Planner Agent</strong>
+                </div>
+                <p style="font-size: 0.74rem; color: var(--text-muted); margin-top: 4px;">4-Stage Journey sequencing and resource curriculum</p>
+              </div>
+
+              <div class="agent-selector-card" data-agent="Progress Evaluator Agent">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="agent-mini-dot"></span>
+                  <strong style="font-size: 0.88rem; color: #fff;">Progress Evaluator Agent</strong>
+                </div>
+                <p style="font-size: 0.74rem; color: var(--text-muted); margin-top: 4px;">Smart Adapt AI engine and code evaluation runner</p>
+              </div>
+            </div>
+
+            <!-- Chat Window -->
+            <div class="chat-panel">
+              <div class="chat-messages-container" id="chatMessagesContainer">
+                <div class="chat-msg agent">
+                  <div class="chat-msg-avatar">M</div>
+                  <div class="chat-bubble">
+                    Hello Deeksha! I'm your <strong>AI Mentor Agent</strong>. Every skill has a purpose, and every learner has a future. I collaborate closely with the Skill Analyzer, Career Guide, Learning Planner, and Progress Evaluator. Your current Career Readiness for Full Stack Development is <strong>42%</strong>. What concept, roadmap question, or coding roadblock can I assist you with today?
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Prompts -->
+              <div class="quick-prompts-row">
+                <span class="prompt-pill" data-prompt="What should I focus on next in my learning journey?">📌 What should I focus on next?</span>
+                <span class="prompt-pill" data-prompt="Why is CSS Flexbox critical before React?">💡 Why CSS Flexbox before React?</span>
+                <span class="prompt-pill" data-prompt="How does Smart Adapt AI adjust my journey?">🧠 How does Smart Adapt AI work?</span>
+                <span class="prompt-pill" data-prompt="What is the Skill-to-Project Bridge?">🛠️ What is the Skill-to-Project Bridge?</span>
+              </div>
+
+              <form class="chat-input-row" id="mentorChatForm">
+                <input type="text" class="chat-input" id="chatInputMessage" placeholder="Ask your AI Mentor anything about your path, code, or career strategy..." autocomplete="off">
+                <button type="submit" class="btn-send-chat">Send</button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. MY PROJECTS (SKILL-TO-PROJECT BRIDGE) -->
+        <section id="view-projects" class="view-section">
+          <div class="glass-card-header" style="margin-bottom: 24px;">
+            <div>
+              <h2 class="card-title" style="font-size: 1.4rem;">Skill-to-Project Bridge</h2>
+              <p class="card-subtitle">Practical hands-on mini-projects crafted directly around your missing competencies</p>
+            </div>
+            <div class="meta-pill">
+              🔬 Environment: <strong style="color: var(--accent-cyan);">Sandboxed Interactive Runtime</strong>
+            </div>
+          </div>
+
+          <div class="bridge-layout">
+            <!-- Project Selector List -->
+            <div class="project-selector-list" id="projectSelectorList">
+              <!-- Injected dynamically -->
+            </div>
+
+            <!-- Workstation & Editor -->
+            <div class="project-workstation">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div>
+                  <h3 class="card-title" id="activeProjectTitle">JavaScript Interactive Calculator</h3>
+                  <p class="card-subtitle" id="activeProjectSubtitle">Implement state handling, operand chaining, and error recovery.</p>
+                </div>
+                <div class="meta-pill" id="activeProjectSkillPill">Target: JavaScript</div>
+              </div>
+
+              <!-- Objectives list -->
+              <div style="background: rgba(13, 14, 38, 0.6); padding: 14px 18px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle); font-size: 0.85rem;" id="activeProjectObjectives">
+                <!-- Injected objectives -->
+              </div>
+
+              <!-- Code Editor -->
+              <textarea class="code-editor-textarea" id="projectCodeEditor" spellcheck="false"></textarea>
+
+              <div class="project-action-row">
+                <button class="btn-collaborate" id="btnResetProjectCode" style="font-size: 0.82rem;">↺ Reset Starter Template</button>
+                <button class="btn-run-project" id="btnRunProjectCode">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                  <span>Evaluate Project &amp; Test Code</span>
+                </button>
+              </div>
+
+              <!-- Test Console Output -->
+              <div class="project-console-panel" id="projectConsolePanel">
+                <span style="color: var(--text-dim);">&gt; Console ready. Click 'Evaluate Project & Test Code' to run automated evaluation suite.</span>
+              </div>
+
+              <!-- Live Interactive Artifact Preview -->
+              <div class="project-preview-card" id="projectLivePreviewContainer">
+                <div class="preview-header">
+                  <div style="display: flex; align-items: center; gap: 8px;">
+                    <span class="pulse-dot"></span>
+                    <strong style="font-size: 0.88rem; color: #fff;">Live Interactive Artifact Preview</strong>
+                  </div>
+                  <span style="font-size: 0.74rem; color: var(--accent-cyan);" id="projectPreviewStatus">Interactive Sandbox Active</span>
+                </div>
+                <div id="projectLivePreviewBody">
+                  <!-- Dynamically rendered interactive mini-app based on project -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 8. FUTURE ME VIEW -->
+        <section id="view-futureme" class="view-section">
+          <div class="glass-card-header" style="margin-bottom: 24px;">
+            <div>
+              <h2 class="card-title" style="font-size: 1.4rem;">Future Me – Career Growth Preview</h2>
+              <p class="card-subtitle">Inspiring visual preview contrasting your current self with your future career-ready self</p>
+            </div>
+          </div>
+
+          <div class="future-me-grid">
+            <!-- Current Self -->
+            <div class="future-self-card">
+              <span class="future-badge">Baseline Reality</span>
+              <h3 class="card-title" style="font-size: 1.4rem;">My Current Self</h3>
+              <div class="future-metric" style="color: var(--lavender);" id="fmCurrentReadiness">42%</div>
+              <p class="card-subtitle" style="margin-bottom: 20px;">Current Career Readiness</p>
+
+              <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div style="background: rgba(13, 14, 38, 0.6); padding: 12px 16px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                  <strong style="font-size: 0.82rem; color: var(--accent-emerald);">Validated Strengths</strong>
+                  <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 2px;">Python (70%), SQL (65%), Basic HTML (50%)</p>
+                </div>
+                <div style="background: rgba(13, 14, 38, 0.6); padding: 12px 16px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                  <strong style="font-size: 0.82rem; color: var(--accent-rose);">Active Competency Gaps</strong>
+                  <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 2px;">CSS, JavaScript, React, Node.js, API Integration</p>
+                </div>
+                <div style="background: rgba(13, 14, 38, 0.6); padding: 12px 16px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                  <strong style="font-size: 0.82rem; color: var(--accent-cyan);">Current Journey Position</strong>
+                  <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 2px;">Stage 1: Discover (Foundations & Mental Models)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Future Self -->
+            <div class="future-self-card future">
+              <span class="future-badge" style="background: rgba(16, 185, 129, 0.25); color: var(--accent-emerald);">Projected Transformation</span>
+              <h3 class="card-title" style="font-size: 1.4rem;">My Future Self</h3>
+              <div class="future-metric" style="color: var(--accent-emerald);">96%</div>
+              <p class="card-subtitle" style="margin-bottom: 20px;">Target Career Readiness (Certified Full Stack Developer)</p>
+
+              <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div style="background: rgba(13, 14, 38, 0.7); padding: 12px 16px; border-radius: var(--radius-sm); border: 1px solid rgba(16, 185, 129, 0.3);">
+                  <strong style="font-size: 0.82rem; color: var(--accent-emerald);">Demonstrated Artifacts &amp; Projects</strong>
+                  <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 2px;">4 completed Skill-to-Project Bridge production repositories</p>
+                </div>
+                <div style="background: rgba(13, 14, 38, 0.7); padding: 12px 16px; border-radius: var(--radius-sm); border: 1px solid rgba(16, 185, 129, 0.3);">
+                  <strong style="font-size: 0.82rem; color: var(--accent-emerald);">Full Stack Mastery Achieved</strong>
+                  <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 2px;">React 18 hooks, Node Express microservices, SQL query indexing</p>
+                </div>
+                <div style="background: rgba(13, 14, 38, 0.7); padding: 12px 16px; border-radius: var(--radius-sm); border: 1px solid rgba(16, 185, 129, 0.3);">
+                  <strong style="font-size: 0.82rem; color: var(--accent-emerald);">Hiring Status Forecast</strong>
+                  <p style="font-size: 0.85rem; color: #cbd5e1; margin-top: 2px;">Ready for Technical Full Stack Software Engineer interviews</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 9. PROGRESS & ACHIEVEMENTS VIEW -->
+        <section id="view-progress" class="view-section">
+          <div class="glass-card-header" style="margin-bottom: 24px;">
+            <div>
+              <h2 class="card-title" style="font-size: 1.4rem;">Progress &amp; Achievement Milestones</h2>
+              <p class="card-subtitle">Recognizing consistent momentum, assessment mastery, and project execution</p>
+            </div>
+            <div class="meta-pill">
+              Milestones Earned: <strong id="progressMilestonesRatio" style="color: var(--accent-amber);">2 / 5</strong>
+            </div>
+          </div>
+
+          <div class="milestones-grid" id="milestonesContainer">
+            <!-- Injected dynamically -->
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Adaptive Assessment Modal (Smart Adapt AI) -->
+  <div class="modal-overlay" id="quizModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <h3 class="card-title" id="quizModalTitle">Stage 1: Discover Diagnostic</h3>
+          <p class="card-subtitle" id="quizModalTopic">Frontend Fundamentals & Core Logic</p>
+        </div>
+        <button class="btn-close-modal" id="btnCloseQuizModal">&times;</button>
+      </div>
+
+      <!-- Smart Adapt AI Alert Banner (Appears after submission) -->
+      <div id="quizAdaptBanner" style="display: none;" class="adapt-banner">
+        <div style="font-size: 1.6rem;" id="adaptIcon">🧠</div>
+        <div>
+          <h4 style="font-size: 0.95rem; font-weight: 700; color: #fff;" id="adaptTitle">Smart Adapt AI Activated</h4>
+          <p style="font-size: 0.82rem; color: var(--text-main); margin-top: 2px;" id="adaptDesc">Score below 50%: Remedial revision micro-drills injected into roadmap.</p>
+        </div>
+      </div>
+
+      <!-- Questions Form -->
+      <form id="quizForm">
+        <div id="quizQuestionsContainer">
+          <!-- Injected questions -->
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 20px;">
+          <button type="button" class="btn-collaborate" id="btnCancelQuiz">Close</button>
+          <button type="submit" class="btn-run-project" id="btnSubmitQuiz">Submit &amp; Evaluate</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 5-Agent Collaborative Huddle Modal -->
+  <div class="modal-overlay" id="agentHuddleModal">
+    <div class="modal-dialog" style="max-width: 640px;">
+      <div class="modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div class="brand-icon" style="width: 32px; height: 32px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <div>
+            <h3 class="card-title">5-Agent Collaborative Sync</h3>
+            <p class="card-subtitle">Multi-Agent exchange pipeline across the Skillora AI mesh</p>
+          </div>
+        </div>
+        <button class="btn-close-modal" id="btnCloseHuddleModal">&times;</button>
+      </div>
+
+      <!-- Visual Agent Exchange Pipeline -->
+      <div class="agent-mesh-pipeline">
+        <div class="mesh-node"><span class="node-title">Skill Analyzer</span><span class="node-sub">Audit Gaps</span></div>
+        <div class="mesh-arrow">➔</div>
+        <div class="mesh-node"><span class="node-title">Career Guide</span><span class="node-sub">Readiness</span></div>
+        <div class="mesh-arrow">➔</div>
+        <div class="mesh-node"><span class="node-title">Learning Planner</span><span class="node-sub">4-Stage Journey</span></div>
+        <div class="mesh-arrow">➔</div>
+        <div class="mesh-node"><span class="node-title">Progress Evaluator</span><span class="node-sub">Smart Adapt</span></div>
+        <div class="mesh-arrow">➔</div>
+        <div class="mesh-node"><span class="node-title">AI Mentor</span><span class="node-sub">Counsel</span></div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px;" id="huddleLogsContainer">
+        <!-- Injected Agent Huddle steps -->
+      </div>
+
+      <div style="display: flex; justify-content: flex-end;">
+        <button class="btn-collaborate" id="btnDoneHuddle" style="background: var(--primary); color: #fff;">Acknowledge &amp; Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add / Discover Skill Modal -->
+  <div class="modal-overlay" id="addSkillModal">
+    <div class="modal-dialog" style="max-width: 500px;">
+      <div class="modal-header">
+        <h3 class="card-title">Discover / Add Skill to Universe</h3>
+        <button class="btn-close-modal" id="btnCloseSkillModal">&times;</button>
+      </div>
+      <form id="addSkillForm" style="display: flex; flex-direction: column; gap: 16px;">
+        <div>
+          <label style="display: block; font-size: 0.84rem; color: var(--text-muted); margin-bottom: 6px;">Skill Name</label>
+          <input type="text" id="inputSkillName" class="chat-input" placeholder="e.g. TypeScript, GraphQL, Docker" required style="width: 100%;">
+        </div>
+        <div>
+          <label style="display: block; font-size: 0.84rem; color: var(--text-muted); margin-bottom: 6px;">Category</label>
+          <select id="inputSkillCategory" class="chat-input" style="width: 100%;">
+            <option value="Frontend">Frontend</option>
+            <option value="Backend">Backend</option>
+            <option value="Database">Database</option>
+            <option value="DevOps">DevOps</option>
+            <option value="Security">Security</option>
+          </select>
+        </div>
+        <div>
+          <label style="display: block; font-size: 0.84rem; color: var(--text-muted); margin-bottom: 6px;">Status</label>
+          <select id="inputSkillState" class="chat-input" style="width: 100%;">
+            <option value="mastered">Already Mastered</option>
+            <option value="learning">Currently Learning</option>
+            <option value="missing">Missing Gap</option>
+            <option value="recommended">Recommended Next</option>
+          </select>
+        </div>
+        <div>
+          <label style="display: block; font-size: 0.84rem; color: var(--text-muted); margin-bottom: 6px;">Proficiency Level: <span id="lblSkillProf" style="color: var(--lavender); font-weight: 700;">60%</span></label>
+          <input type="range" id="inputSkillProf" min="10" max="100" value="60" style="width: 100%;">
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 10px; margin-top: 10px;">
+          <button type="button" class="btn-collaborate" id="btnCancelAddSkill">Cancel</button>
+          <button type="submit" class="btn-collaborate" style="background: var(--primary); color: #fff;">Save to Universe</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Drawer -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Core JavaScript Application -->
+  <script src="app.js"></script>
+</body>
+</html>
